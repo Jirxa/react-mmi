@@ -10,6 +10,10 @@ header{
     color: red;
 }
 
+.machine-desactivee #cabane {
+    text-transform: uppercase;
+}
+
 button {
     background-color: black;
     color: white;
