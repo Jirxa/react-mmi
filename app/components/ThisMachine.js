@@ -4,6 +4,8 @@
  *
  */
 import React from 'react';
+import Toggle from 'react-toggle';
+import "react-toggle/style.css";
 
 class ThisMachine extends React.Component {
   
@@ -21,10 +23,17 @@ class ThisMachine extends React.Component {
   }
 
   handleClick() {
+    
+    console.log('Clic sur le bouton ------- ');
+    // On accède dans cette méthode à ce qu'on a passé en props au composant
+    console.log(this.props.name);
+    console.log(this.state);
+    
     this.setState(prevState => ({
       isMachineOn: !prevState.isMachineOn
     }));
   }
+  
   
 
   render() {
@@ -38,6 +47,11 @@ class ThisMachine extends React.Component {
      <button onClick={this.handleClick}>
      {this.state.isMachineOn ? 'ON' : 'OFF'}
      </button>
+     
+     <br/>
+     <Toggle
+            checked={this.state.isMachineOn}
+            onChange={this.handleClick}/>
      
      <p id="cabane">{this.state.denis}</p>
 
